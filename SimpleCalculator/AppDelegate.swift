@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  SimpleCalculator
 //
-//  Created by Alex Ilyenko on 9/26/17.
+//  Created by Alex Ilyenko on 9/19/17.
 //  Copyright © 2017 Alex Ilyenko. All rights reserved.
 //
 
