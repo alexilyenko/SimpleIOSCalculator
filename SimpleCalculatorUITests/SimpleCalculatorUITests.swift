@@ -20,12 +20,10 @@ class SimpleCalculatorUITests: XCTestCase {
     }
 
     override func tearDown() {
-        // Taking screenshot after test
         let screenshot = XCUIScreen.main.screenshot()
         let fullScreenshotAttachment = XCTAttachment(screenshot: screenshot)
         fullScreenshotAttachment.lifetime = .keepAlways
         add(fullScreenshotAttachment)
-        // Closing the app
         app.terminate()
     }
 }
