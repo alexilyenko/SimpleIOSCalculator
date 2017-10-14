@@ -6,7 +6,6 @@
 //  Copyright © 2017 Alex Ilyenko. All rights reserved.
 //
 
-import Foundation
 import XCTest
 
 class BaseTest: XCTestCase {
