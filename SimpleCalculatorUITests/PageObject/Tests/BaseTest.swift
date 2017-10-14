@@ -1,31 +1,27 @@
 //
-//  SimpleCalculatorUITests.swift
+//  BaseTest.swift
 //  SimpleCalculatorUITests
 //
-//  Created by Alex Ilyenko on 9/19/17.
+//  Created by Alex Ilyenko on 10/14/17.
 //  Copyright © 2017 Alex Ilyenko. All rights reserved.
 //
 
+import Foundation
 import XCTest
 
-class SimpleCalculatorUITests: XCTestCase {
-    let app = XCUIApplication()
+class BaseTest: XCTestCase {
+    private let app = XCUIApplication()
 
     override func setUp() {
         continueAfterFailure = false
         app.launch()
     }
 
-    func test() {
-    }
-
     override func tearDown() {
-        // Taking screenshot after test
         let screenshot = XCUIScreen.main.screenshot()
         let fullScreenshotAttachment = XCTAttachment(screenshot: screenshot)
         fullScreenshotAttachment.lifetime = .keepAlways
         add(fullScreenshotAttachment)
-        // Closing the app
         app.terminate()
     }
 }
