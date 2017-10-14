@@ -20,7 +20,7 @@ class BaseTest: XCTestCase {
     override func tearDown() {
         let screenshot = XCUIScreen.main.screenshot()
         let fullScreenshotAttachment = XCTAttachment(screenshot: screenshot)
-        fullScreenshotAttachment.lifetime = .keepAlways
+        fullScreenshotAttachment.lifetime = .deleteOnSuccess
         add(fullScreenshotAttachment)
         app.terminate()
     }
