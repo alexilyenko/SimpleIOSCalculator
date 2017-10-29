@@ -9,11 +9,11 @@
 import XCTest
 
 class Calculator: BaseScreen {
-    private lazy var plusButton = buttons["+"]
-    private lazy var multiplyButton = buttons["*"]
-    private lazy var equalButton = buttons["="]
-    private lazy var resetButton = buttons["AC"]
-    private lazy var minusButton = buttons["-"]
+    private lazy var plusButton = buttons["+"].firstMatch
+    private lazy var multiplyButton = buttons["*"].firstMatch
+    private lazy var equalButton = buttons["="].firstMatch
+    private lazy var resetButton = buttons["AC"].firstMatch
+    private lazy var minusButton = buttons["-"].firstMatch
     private lazy var screen = findAll(.staticText).firstMatch
     private lazy var buttons = findAll(.button)
 

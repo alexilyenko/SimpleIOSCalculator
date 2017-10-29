@@ -10,6 +10,8 @@ import XCTest
 
 class BaseTest: XCTestCase {
     private let app = XCUIApplication()
+    let firstNumber = Double(arc4random_uniform(1000))
+    let secondNumber = Double(arc4random_uniform(1000))
 
     override func setUp() {
         continueAfterFailure = false
