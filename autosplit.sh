@@ -29,8 +29,8 @@ done
 cmd=''
 for (( i=0; i<${#devices[@]}; i++ ));
 do
-  cmd=$cmd${devices[$i]}" test & "
+  cmd=${cmd}${devices[$i]}" test & "
 done
 
-echo $cmd
-eval $cmd
+echo ${cmd}
+eval ${cmd}
