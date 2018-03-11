@@ -35,7 +35,7 @@ class Calculator: BaseScreen {
     }
 
     private func inputNumber(_ number: Double) {
-        for ch in String(number).characters {
+        for ch in String(number) {
             buttons[String(ch)].tap()
         }
     }

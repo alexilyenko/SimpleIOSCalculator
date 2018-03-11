@@ -12,11 +12,15 @@ protocol BaseScreen {
 }
 
 extension BaseScreen {
-    func findAll(_ type: XCUIElement.`Type`) -> XCUIElementQuery {
-        return XCUIApplication().descendants(matching: type)
+    func findAll(_ type: XCUIElement.ElementType) -> XCUIElementQuery {
+        return app.descendants(matching: type)
     }
 
     func step(_ name: String, block: (XCTActivity) -> Void) {
         XCTContext.runActivity(named: name, block: block)
+    }
+
+    var app: XCUIApplication {
+        return XCUIApplication()
     }
 }
