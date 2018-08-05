@@ -5,3 +5,4 @@ xcuserdata
 Build/*
 SimpleCalculatorUITests2/
 _site/
+.DS_Store
