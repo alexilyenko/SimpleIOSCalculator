@@ -76,7 +76,7 @@ class ViewController: UIViewController {
         default: return Double(resultLabel.text!)!
         }
     }
-    
+
     private func wait() {
         if UserDefaults.standard.bool(forKey: "enableWaits") {
             sleep(2)

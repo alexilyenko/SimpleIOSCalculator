@@ -19,11 +19,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             //Set autoAdjustSettings and isNotFirstLaunch to true
             UserDefaults.standard.set(false, forKey: "enableWaits")
             UserDefaults.standard.set(true, forKey: "isNotFirstLaunch")
-            
+
             //Sync NSUserDefaults
             UserDefaults.standard.synchronize()
         }
-        
+
         return true
     }
 
