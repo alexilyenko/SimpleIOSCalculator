@@ -15,6 +15,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        if !UserDefaults.standard.bool(forKey: "isNotFirstLaunch") {
+            //Set autoAdjustSettings and isNotFirstLaunch to true
+            UserDefaults.standard.set(false, forKey: "enableWaits")
+            UserDefaults.standard.set(true, forKey: "isNotFirstLaunch")
+            
+            //Sync NSUserDefaults
+            UserDefaults.standard.synchronize()
+        }
+        
         return true
     }
 

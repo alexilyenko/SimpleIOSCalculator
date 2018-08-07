@@ -10,10 +10,12 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    static var isWaitEnabled: Bool! = false
     @IBOutlet weak var resultLabel: UILabel!
     private var firstNumber: Double = 0.0
     private var symbol: String = ""
     private var isSymbolPressed: Bool = false
+    var settings: SettingsViewController!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,6 +50,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func pressReset(_ sender: UIButton) {
+        wait()
         resultLabel.text = String(0)
         firstNumber = 0.0
         symbol = ""
@@ -57,6 +60,7 @@ class ViewController: UIViewController {
     @IBAction func pressCalculate(_ sender: UIButton) {
         let secondNumber = Double(resultLabel.text!)!
         let result = calculate(secondNumber)
+        wait()
         resultLabel.text = String(result)
         firstNumber = 0.0
         symbol = ""
@@ -70,6 +74,12 @@ class ViewController: UIViewController {
         case "*": return firstNumber * secondNumber
         case "/": return firstNumber / secondNumber
         default: return Double(resultLabel.text!)!
+        }
+    }
+    
+    private func wait() {
+        if UserDefaults.standard.bool(forKey: "enableWaits") {
+            sleep(2)
         }
     }
 }
